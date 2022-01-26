@@ -1,0 +1,17 @@
+<h2>Task List</h2>
+
+<div  *ngIf="tasks">
+    <div style="border: 3px solid black" *ngFor="let task of tasks; let i = index">
+
+        <div id="display{{task.id}}">
+            <p>Task Description: {{task.description}}</p>
+            <p>Team Member Responsible: {{task.tmName}}</p>
+            <p>Due Date: {{this.datepipe.transform(task.dueDate, 'MMMM d, y')}}</p>
+            <p>Is Complete: {{task.isCompleted}}</p>
+            <p><button [routerLink]="['/list-tasks']" (click)="deleteTask(task.id, i)">Delete Task</button>
+                <button *ngIf="!task.isCompleted" [routerLink]="['/list-tasks']" (click)="markComplete(task.id, i)">Mark Complete</button></p>
+        </div>
+        <button [routerLink]="['/edit-task', task.id]" [id]=task.id>Edit Page</button>
+        
+    </div>
+</div>

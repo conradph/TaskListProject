@@ -1,0 +1,7 @@
+<h2>Create Task</h2>
+<form>
+    <p>Team Member Responsible: <input type="text" id="tmName"/></p>
+    <p>Task Description: <input type="text" id="description"/></p>
+    <p>Due Date: <input type="date" id="date"/></p>
+    <button type="reset" [routerLink]="['/list-tasks']" (click) = "CreateTask()">Create Task</button>
+</form>

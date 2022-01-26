@@ -1,0 +1,7 @@
+<h2>Edit Task</h2>
+<form>
+    <p>Team Member Responsible: <input type="text" id="tmName{{task.id}}" value="{{task.tmName}}"/></p>
+    <p>Task Description: <input type="text" id="description{{task.id}}" value="{{task.description}}"/></p>
+    <p>Due Date: <input type="date" id="date{{task.id}}" value="{{taskDate}}"/></p>
+    <button type="reset" [routerLink]="['/list-tasks']" (click) = "editTask()">Edit Task</button>
+</form>
